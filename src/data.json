@@ -1,0 +1,38 @@
+{
+  "date": "Minggu, 01 Januari 2027 · 10.00 WIB",
+  "location": "Nama Gedung Pernikahan, Kota Tasikmalaya",
+  "gretting": "Dengan penuh rasa syukur dan bahagia,\nkami bermaksud mengundang Bapak/Ibu/Saudara/i\nuntuk hadir dan memberikan doa restu pada pernikahan kami.\nMerupakan suatu kehormatan dan kebahagiaan bagi kami\napabila Anda berkenan hadir di hari istimewa ini.",
+  "groom": {
+    "name": "Nama Mempelai Pria",
+    "account_number": "Nama Bank · 0000000000",
+    "parents": {
+      "mother": {
+        "name": "Nama Ibu Mempelai Pria",
+        "account_number": "Nama Bank · 0000000000"
+      },
+      "father": {
+        "name": "Nama Ayah Mempelai Pria",
+        "account_number": "Nama Bank · 0000000000"
+      }
+    }
+  },
+  "bride": {
+    "name": "Nama Mempelai Wanita",
+    "account_number": "Nama Bank · 0000000000",
+    "parents": {
+      "mother": {
+        "name": "Nama Ibu Mempelai Wanita",
+        "account_number": "Nama Bank · 0000000000"
+      },
+      "father": {
+        "name": "Nama Ayah Mempelai Wanita",
+        "account_number": "Nama Bank · 0000000000"
+      }
+    }
+  },
+  "kakaotalk": {
+    "api_token": "",
+    "wedding_invitation_url": "",
+    "share_image": ""
+  }
+}
