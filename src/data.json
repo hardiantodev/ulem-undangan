@@ -1,38 +1,34 @@
 {
-  "date": "Minggu, 01 Januari 2027 · 10.00 WIB",
-  "location": "Nama Gedung Pernikahan, Kota Tasikmalaya",
-  "gretting": "Dengan penuh rasa syukur dan bahagia,\nkami bermaksud mengundang Bapak/Ibu/Saudara/i\nuntuk hadir dan memberikan doa restu pada pernikahan kami.\nMerupakan suatu kehormatan dan kebahagiaan bagi kami\napabila Anda berkenan hadir di hari istimewa ini.",
+  "event": {
+    "year": "2027",
+    "isoDate": "2027-01-01T10:00:00+07:00",
+    "dateLabel": "Jumat, 01 Januari 2027 · 10.00 WIB",
+    "akadDate": "Jumat, 01 Januari 2027",
+    "akadTime": "08.00 WIB – selesai",
+    "resepsiDate": "Jumat, 01 Januari 2027",
+    "resepsiTime": "10.00 – 13.00 WIB",
+    "venue": "Nama Gedung Pernikahan",
+    "address": "Kota Tasikmalaya, Jawa Barat",
+    "mapsUrl": "https://maps.google.com/?q=Kota+Tasikmalaya"
+  },
   "groom": {
     "name": "Nama Mempelai Pria",
-    "account_number": "Nama Bank · 0000000000",
-    "parents": {
-      "mother": {
-        "name": "Nama Ibu Mempelai Pria",
-        "account_number": "Nama Bank · 0000000000"
-      },
-      "father": {
-        "name": "Nama Ayah Mempelai Pria",
-        "account_number": "Nama Bank · 0000000000"
-      }
-    }
+    "nickname": "Nama Pria",
+    "parents": "Putra dari Bapak Nama Ayah & Ibu Nama Ibu",
+    "instagram": ""
   },
   "bride": {
     "name": "Nama Mempelai Wanita",
-    "account_number": "Nama Bank · 0000000000",
-    "parents": {
-      "mother": {
-        "name": "Nama Ibu Mempelai Wanita",
-        "account_number": "Nama Bank · 0000000000"
-      },
-      "father": {
-        "name": "Nama Ayah Mempelai Wanita",
-        "account_number": "Nama Bank · 0000000000"
-      }
-    }
+    "nickname": "Nama Wanita",
+    "parents": "Putri dari Bapak Nama Ayah & Ibu Nama Ibu",
+    "instagram": ""
   },
-  "kakaotalk": {
-    "api_token": "",
-    "wedding_invitation_url": "",
-    "share_image": ""
+  "gift": {
+    "bank": "Nama Bank",
+    "account": "0000000000",
+    "accountName": "Nama Pemilik Rekening"
+  },
+  "contact": {
+    "whatsapp": "6281234567890"
   }
 }
