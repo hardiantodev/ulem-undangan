@@ -108,6 +108,18 @@ section h2::after{content:'';display:block;width:56px;height:1px;background:curr
 #lbn{right:10px;top:50%}
 @media (prefers-reduced-motion:reduce){.g{transition:none;opacity:1;transform:none}#lb,#lb img{transition:none}}
 a.link{color:var(--pink);font-weight:600;text-decoration:none}
+
+/* Slide khusus ayat Al-Qur'an */
+.quran-section{background:linear-gradient(160deg,#f7f2ec 0%,#eee4da 100%);padding-top:68px;padding-bottom:68px}
+.quran-card{position:relative;max-width:390px;margin:22px auto 0;padding:34px 24px 28px;background:rgba(255,255,255,.78);border:1px solid #d8c6b7;border-radius:22px;box-shadow:0 12px 32px rgba(74,63,58,.08)}
+.quran-card:before,.quran-card:after{content:'❧';position:absolute;color:#a88b78;font-size:27px;line-height:1}
+.quran-card:before{top:12px;left:16px}
+.quran-card:after{right:16px;bottom:10px;transform:rotate(180deg)}
+.quran-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#9a7864;font-weight:700;margin:0 0 18px}
+.quran-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;line-height:1.65;color:#51443c;margin:0}
+.quran-ref{display:inline-block;margin-top:22px;padding:8px 18px;border:1px solid #c9ad99;border-radius:30px;color:#806451;font-size:13px;font-weight:700;letter-spacing:.5px}
+@media(max-width:360px){.quran-card{padding:30px 18px}.quran-text{font-size:21px}}
+
 </style>
 </head>
 <body>
@@ -136,6 +148,16 @@ a.link{color:var(--pink);font-weight:600;text-decoration:none}
     <p><b id="dateLabel">Minggu, 20 Desember 2026</b></p>
     <div class="cd" id="cd"></div>
     <a class="btn" id="saveDate" target="_blank" rel="noopener" style="text-decoration:none">Save The Date</a>
+  </section>
+
+
+  <section data-bg="quran" class="quran-section">
+    <p class="quran-label rv">Sepenggal Ayat Suci</p>
+    <h2 class="script rv">Surat Ar-Rum</h2>
+    <div class="quran-card rv">
+      <p class="quran-text">Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
+      <span class="quran-ref">QS. Ar-Rum: 21</span>
+    </div>
   </section>
 
   <section data-bg="mempelai">
