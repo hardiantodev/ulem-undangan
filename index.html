@@ -126,6 +126,16 @@ a.link{color:var(--pink);font-weight:600;text-decoration:none}
 .love-flourish{color:#b08e78;font-size:25px;letter-spacing:8px;margin-top:18px}
 @media(max-width:360px){.love-timeline{padding-left:23px}.love-item{padding:20px 16px}.love-heading{font-size:25px}.love-copy{font-size:12.5px}}
 
+.love-toggle{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:220px;margin:2px auto 8px;padding:13px 22px;border:1px solid #b99a84;border-radius:40px;background:linear-gradient(135deg,#9a7864,#806451);color:#fff;font:600 13px 'Mulish',sans-serif;letter-spacing:.5px;box-shadow:0 8px 20px rgba(74,63,58,.14);cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}
+.love-toggle:hover{transform:translateY(-2px);box-shadow:0 11px 24px rgba(74,63,58,.2)}
+.love-toggle-icon{font-size:19px;line-height:1}
+.love-toggle-arrow{font-size:19px;line-height:1;transition:transform .25s ease}
+.love-toggle[aria-expanded="true"] .love-toggle-arrow{transform:rotate(180deg)}
+.love-content{padding-top:10px;animation:loveReveal .55s ease both}
+.love-content[hidden]{display:none}
+@keyframes loveReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+
 /* Slide khusus ayat Al-Qur'an */
 .quran-section{background:linear-gradient(160deg,#f7f2ec 0%,#eee4da 100%);padding-top:68px;padding-bottom:68px}
 .quran-card{position:relative;max-width:390px;margin:22px auto 0;padding:34px 24px 28px;background:rgba(255,255,255,.78);border:1px solid #d8c6b7;border-radius:22px;box-shadow:0 12px 32px rgba(74,63,58,.08)}
@@ -178,10 +188,39 @@ a.link{color:var(--pink);font-weight:600;text-decoration:none}
   </section>
 
 
+
+
+  <section data-bg="mempelai">
+    <h2 class="script">Mempelai</h2>
+    <div class="card"><div class="names">Alvin Alvani Tresna Ambari</div><div class="gelar">Bdn., M.Tr.Keb</div><p class="muted">Putri dari Bapak Ahmad &amp; Ibu Siti</p></div>
+    <div class="script" style="font-size:34px;color:var(--pink)">&amp;</div>
+    <div class="card"><div class="names">Reda Nada Prana</div><div class="gelar">A.Md.T</div><p class="muted">Putra dari Bapak Budi &amp; Ibu Rina</p></div>
+  </section>
+
+  <section data-bg="acara">
+    <h2 class="script">Rangkaian Acara</h2>
+    <div class="card"><b>Akad Nikah</b><p class="muted">Minggu, 20 Desember 2026<br>08.00 – 10.00 WIB</p></div>
+    <div class="card"><b>Resepsi</b><p class="muted">Minggu, 20 Desember 2026<br>11.00 – 14.00 WIB</p></div>
+    <p class="muted">Gedung Pernikahan (alamat lengkap)</p>
+    <a class="btn mapbtn" id="mapLink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Buka Google Maps</a>
+  </section>
+
+  <section data-bg="galeri">
+    <h2 class="script">Galeri</h2>
+    <p class="muted">Potret kebersamaan kami</p>
+    <div class="gal" id="gal"></div>
+  </section>
+
   <section data-bg="lovestory" class="love-section">
     <p class="love-kicker rv">Our Journey</p>
     <h2 class="script rv">Love Story</h2>
     <p class="love-intro rv">Setiap pertemuan memiliki cerita, dan setiap cerita membawa kami menuju hari istimewa ini.</p>
+    <button type="button" class="love-toggle" id="loveToggle" aria-expanded="false" aria-controls="loveStoryContent">
+      <span class="love-toggle-icon" aria-hidden="true">♡</span>
+      <span id="loveToggleLabel">Baca Kisah Kami</span>
+      <span class="love-toggle-arrow" aria-hidden="true">⌄</span>
+    </button>
+    <div id="loveStoryContent" class="love-content" hidden>
     <div class="love-timeline">
       <article class="love-item rv">
         <p class="love-step">01 · Permulaan</p>
@@ -203,27 +242,7 @@ a.link{color:var(--pink);font-weight:600;text-decoration:none}
     </div>
     <p class="love-ending rv">Dengan memohon ridho Allah SWT, kami memutuskan untuk melangkah bersama, menyempurnakan separuh agama, dan melangkah bersama dalam satu tujuan: ibadah terpanjang.</p>
     <div class="love-flourish rv" aria-hidden="true">❧ ✦ ❧</div>
-  </section>
-
-  <section data-bg="mempelai">
-    <h2 class="script">Mempelai</h2>
-    <div class="card"><div class="names">Alvin Alvani Tresna Ambari</div><div class="gelar">Bdn., M.Tr.Keb</div><p class="muted">Putri dari Bapak Ahmad &amp; Ibu Siti</p></div>
-    <div class="script" style="font-size:34px;color:var(--pink)">&amp;</div>
-    <div class="card"><div class="names">Reda Nada Prana</div><div class="gelar">A.Md.T</div><p class="muted">Putra dari Bapak Budi &amp; Ibu Rina</p></div>
-  </section>
-
-  <section data-bg="acara">
-    <h2 class="script">Rangkaian Acara</h2>
-    <div class="card"><b>Akad Nikah</b><p class="muted">Minggu, 20 Desember 2026<br>08.00 – 10.00 WIB</p></div>
-    <div class="card"><b>Resepsi</b><p class="muted">Minggu, 20 Desember 2026<br>11.00 – 14.00 WIB</p></div>
-    <p class="muted">Gedung Pernikahan (alamat lengkap)</p>
-    <a class="btn mapbtn" id="mapLink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Buka Google Maps</a>
-  </section>
-
-  <section data-bg="galeri">
-    <h2 class="script">Galeri</h2>
-    <p class="muted">Potret kebersamaan kami</p>
-    <div class="gal" id="gal"></div>
+    </div>
   </section>
 
   <section data-bg="rsvp">
@@ -348,6 +367,22 @@ var GUEST=new URLSearchParams(location.search).get('to')||'';
   function pauseMusic(){if(!audio)return;wantPlay=false;audio.pause();setState(false)}
   mus.onclick=function(){if(!audio)return;audio.paused?playMusic():pauseMusic()};
   document.addEventListener('visibilitychange',function(){if(!audio)return;if(document.hidden){audio.pause();setState(false)}else if(wantPlay){playMusic()}});
+
+  var loveToggle=document.getElementById('loveToggle');
+  var loveContent=document.getElementById('loveStoryContent');
+  var loveToggleLabel=document.getElementById('loveToggleLabel');
+  if(loveToggle&&loveContent){
+    loveToggle.addEventListener('click',function(){
+      var expanded=loveToggle.getAttribute('aria-expanded')==='true';
+      loveToggle.setAttribute('aria-expanded',String(!expanded));
+      loveContent.hidden=expanded;
+      loveToggleLabel.textContent=expanded?'Baca Kisah Kami':'Tutup Love Story';
+      if(!expanded){
+        loveContent.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+        setTimeout(function(){loveContent.scrollIntoView({behavior:'smooth',block:'start'})},80);
+      }
+    });
+  }
 
   document.getElementById('openBtn').onclick=function(){
     if(audio){mus.classList.add('show');playMusic()}
