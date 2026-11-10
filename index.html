@@ -148,6 +148,38 @@ a.link{color:var(--pink);font-weight:600;text-decoration:none}
 .quran-ref{display:inline-block;margin-top:22px;padding:8px 18px;border:1px solid #c9ad99;border-radius:30px;color:#806451;font-size:13px;font-weight:700;letter-spacing:.5px}
 @media(max-width:360px){.quran-card{padding:30px 18px}.quran-text{font-size:21px}}
 
+
+/* ===== Penyesuaian layar HP: sampul pas di area yang terlihat ===== */
+html, body { min-height: 100%; }
+:root { padding-top: 0; padding-bottom: 0; }
+#cover {
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+  min-height: 0;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  overflow: hidden;
+}
+.cphoto { flex: 1 1 0; min-height: 0; }
+.cpanel { flex: 0 0 auto; padding: 6px 20px max(18px, env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 600px) {
+  #cover { width: 100%; max-width: none; }
+  .cnames { font-size: clamp(34px, 9vw, 44px); }
+  .csmall { margin-top: 8px; }
+  .cdate { margin-bottom: 10px; }
+  .guest { padding: 9px 18px; }
+  .btn { margin-top: 12px; }
+}
+@media (max-height: 700px) and (max-width: 600px) {
+  .cpanel { padding-top: 2px; padding-bottom: max(12px, env(safe-area-inset-bottom, 0px)); }
+  .cnames { font-size: 34px; margin: 3px 0 6px; }
+  .csmall { font-size: 13px; margin-top: 4px; }
+  .cdate { font-size: 12px; margin-bottom: 7px; }
+  .guest { min-width: 190px; padding: 7px 14px; font-size: 12px; }
+  .guest b { font-size: 17px; margin: 2px 0; }
+  .btn { font-size: 14px; padding: 9px 18px; margin-top: 9px; }
+}
 </style>
 </head>
 <body>
