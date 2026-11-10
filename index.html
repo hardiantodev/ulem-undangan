@@ -17,10 +17,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:'Mulish',system-
 .script{font-family:'Great Vibes',cursive,serif;font-weight:400}
 #cover{min-height:100vh;min-height:100dvh;max-width:480px;margin:0 auto;display:flex;flex-direction:column;background:var(--panel)}
 .cphoto{position:relative;flex:1;min-height:46vh;overflow:hidden;background:linear-gradient(180deg,#d9d3cc,#b3a89f)}
-#bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;opacity:var(--cover-opacity,1);z-index:0}
+#bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--cover-video-position,50% 50%);transform:scale(var(--cover-video-scale,1));transform-origin:center center;display:none;opacity:var(--cover-opacity,1);z-index:0}
 #cph:after{content:'';position:absolute;inset:0;z-index:1;background:rgba(0,0,0,var(--cover-overlay,0));pointer-events:none}
-.cpanel{position:relative;background:var(--panel);text-align:center;padding:6px 24px 36px}
-.cwave{position:absolute;left:0;right:0;top:calc(-1 * var(--cover-wave-offset,58px));width:100%;height:var(--cover-wave-height,60px);display:block;pointer-events:none}
+.cpanel{position:relative;z-index:2;background:#fff;text-align:center;padding:6px 24px 36px;border-top:0}
+.cwave{position:absolute;left:0;right:0;top:calc(-1 * var(--cover-wave-offset,58px));width:100%;height:var(--cover-wave-height,60px);display:block;pointer-events:none;z-index:4;overflow:visible}
 .cwave .w1{fill:var(--cover-wave-1,#cfc9c4);opacity:.75}
 .cwave .w2{fill:var(--cover-wave-2,#e7e3df);opacity:.9}
 .cwave .w3{fill:var(--cover-wave-3,var(--panel))}
@@ -289,12 +289,15 @@ var BG={
   amplop:''      // amplop digital & penutup
 };
 var BG_DIM=0.45;  // gelap lapisan di halaman dalam (0 = tanpa, 0.7 = gelap)
-var COVER_OPACITY=0.90; // transparansi video sampul: 0 = tidak terlihat, 1 = penuh
-var COVER_OVERLAY=0.08; // lapisan gelap di atas video sampul: 0 = tanpa, 0.5 = lebih gelap
-var COVER_WAVE_OFFSET=85; // posisi gelombang dari atas panel (px): kecil = turun, besar = naik
+var COVER_OPACITY=1; // transparansi video sampul: 0 = tidak terlihat, 1 = penuh
+var COVER_OVERLAY=0; // tanpa lapisan hitam di atas video
+var COVER_VIDEO_SCALE=1.00; // perbesar video untuk memotong garis hitam bawaan video: 1 = normal, 1.10 = sedikit zoom
+var COVER_VIDEO_X=50; // posisi horizontal: 0 = kiri, 50 = tengah, 100 = kanan
+var COVER_VIDEO_Y=50; // posisi vertikal: 0 = atas, 50 = tengah, 100 = bawah
+var COVER_WAVE_OFFSET=58; // posisi gelombang dari atas panel (px): kecil = turun, besar = naik
 var COVER_WAVE_HEIGHT=60; // tinggi gelombang (px)
-var COVER_WAVE_COLOR_1='#cfc9c4'; // warna lapisan gelombang paling atas
-var COVER_WAVE_COLOR_2='#e7e3df'; // warna lapisan gelombang tengah
+var COVER_WAVE_COLOR_1='#d8cec5'; // warna lapisan gelombang paling atas
+var COVER_WAVE_COLOR_2='#eee9e4'; // warna lapisan gelombang tengah
 var COVER_WAVE_COLOR_3='#ffffff'; // warna lapisan gelombang bawah
 var MAPS_URL='';
 var MUSIC_URL='maher.mp3';   // nama file musik di repo; kosongkan ('') kalau tidak pakai musik
@@ -306,6 +309,9 @@ var GUEST=new URLSearchParams(location.search).get('to')||'';
   document.documentElement.style.setProperty('--dim',BG_DIM);
   document.documentElement.style.setProperty('--cover-opacity',Math.max(0,Math.min(1,COVER_OPACITY)));
   document.documentElement.style.setProperty('--cover-overlay',Math.max(0,Math.min(1,COVER_OVERLAY)));
+  document.documentElement.style.setProperty('--cover-video-scale',Math.max(1,COVER_VIDEO_SCALE));
+  document.documentElement.style.setProperty('--cover-video-position',
+    Math.max(0,Math.min(100,COVER_VIDEO_X))+'% '+Math.max(0,Math.min(100,COVER_VIDEO_Y))+'%');
   document.documentElement.style.setProperty('--cover-wave-offset',Math.max(0,COVER_WAVE_OFFSET)+'px');
   document.documentElement.style.setProperty('--cover-wave-height',Math.max(1,COVER_WAVE_HEIGHT)+'px');
   document.documentElement.style.setProperty('--cover-wave-1',COVER_WAVE_COLOR_1);
