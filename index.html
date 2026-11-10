@@ -20,10 +20,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:'Mulish',system-
 #bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;opacity:var(--cover-opacity,1);z-index:0}
 #cph:after{content:'';position:absolute;inset:0;z-index:1;background:rgba(0,0,0,var(--cover-overlay,0));pointer-events:none}
 .cpanel{position:relative;background:var(--panel);text-align:center;padding:6px 24px 36px}
-.cwave{position:absolute;left:0;right:0;top:-58px;width:100%;height:60px;display:block;pointer-events:none}
-.cwave .w1{fill:#cfc9c4;opacity:.75}
-.cwave .w2{fill:#e7e3df;opacity:.9}
-.cwave .w3{fill:var(--panel)}
+.cwave{position:absolute;left:0;right:0;top:calc(-1 * var(--cover-wave-offset,58px));width:100%;height:var(--cover-wave-height,60px);display:block;pointer-events:none}
+.cwave .w1{fill:var(--cover-wave-1,#cfc9c4);opacity:.75}
+.cwave .w2{fill:var(--cover-wave-2,#e7e3df);opacity:.9}
+.cwave .w3{fill:var(--cover-wave-3,var(--panel))}
 .cpanel>*:not(.cwave):not(.leaf){position:relative;z-index:1}
 .leaf{position:absolute;width:34px;opacity:.55;fill:none;stroke:var(--muted);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;animation:sway 6s ease-in-out infinite;transform-origin:50% 100%}
 .leaf.l1{right:22px;top:34px}
@@ -291,6 +291,11 @@ var BG={
 var BG_DIM=0.45;  // gelap lapisan di halaman dalam (0 = tanpa, 0.7 = gelap)
 var COVER_OPACITY=0.90; // transparansi video sampul: 0 = tidak terlihat, 1 = penuh
 var COVER_OVERLAY=0.08; // lapisan gelap di atas video sampul: 0 = tanpa, 0.5 = lebih gelap
+var COVER_WAVE_OFFSET=58; // posisi gelombang dari atas panel (px): kecil = turun, besar = naik
+var COVER_WAVE_HEIGHT=60; // tinggi gelombang (px)
+var COVER_WAVE_COLOR_1='#cfc9c4'; // warna lapisan gelombang paling atas
+var COVER_WAVE_COLOR_2='#e7e3df'; // warna lapisan gelombang tengah
+var COVER_WAVE_COLOR_3='#ffffff'; // warna lapisan gelombang bawah
 var MAPS_URL='';
 var MUSIC_URL='maher.mp3';   // nama file musik di repo; kosongkan ('') kalau tidak pakai musik
 var PHOTOS=['foto1.jpg','foto2.jpg','foto3.jpg','foto4.jpg','foto5.jpg','foto6.jpg']; // nama file foto di repo, boleh ditambah/dikurangi                 // tempel link Google Maps lokasi acara
@@ -301,6 +306,11 @@ var GUEST=new URLSearchParams(location.search).get('to')||'';
   document.documentElement.style.setProperty('--dim',BG_DIM);
   document.documentElement.style.setProperty('--cover-opacity',Math.max(0,Math.min(1,COVER_OPACITY)));
   document.documentElement.style.setProperty('--cover-overlay',Math.max(0,Math.min(1,COVER_OVERLAY)));
+  document.documentElement.style.setProperty('--cover-wave-offset',Math.max(0,COVER_WAVE_OFFSET)+'px');
+  document.documentElement.style.setProperty('--cover-wave-height',Math.max(1,COVER_WAVE_HEIGHT)+'px');
+  document.documentElement.style.setProperty('--cover-wave-1',COVER_WAVE_COLOR_1);
+  document.documentElement.style.setProperty('--cover-wave-2',COVER_WAVE_COLOR_2);
+  document.documentElement.style.setProperty('--cover-wave-3',COVER_WAVE_COLOR_3);
   function isVideo(u){return /\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(u)}
   function mkVideo(u){var m=document.createElement('video');m.muted=true;m.defaultMuted=true;m.setAttribute('muted','');m.loop=true;m.playsInline=true;m.setAttribute('playsinline','');m.preload='metadata';m.src=u;return m}
   // Ornamen halaman dalam
